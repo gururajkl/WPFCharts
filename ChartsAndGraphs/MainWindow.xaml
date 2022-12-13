@@ -1,0 +1,33 @@
+﻿<Window x:Class="ChartsAndGraphs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        Title="MainWindow" Height="350" Width="650">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="500"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <WindowsFormsHost>
+            <wf:Chart x:Name="Chart">
+                <wf:Chart.Series>
+                    <wf:Series ChartType="Column" />
+                </wf:Chart.Series>
+                <wf:Chart.ChartAreas>
+                    <wf:ChartArea />
+                </wf:Chart.ChartAreas>
+            </wf:Chart>
+        </WindowsFormsHost>
+
+        <StackPanel VerticalAlignment="Center" Grid.Column="1" Margin="20">
+            <Label Content="Chart type" FontSize="14"/>
+            <StackPanel Orientation="Vertical">
+                <RadioButton Name="ColRadio" Content="Column" GroupName="ChartTypeRadios" Margin="20,5,0,0" IsChecked="True" Click="Radio_Click"/>
+                <RadioButton Name="BarRadio" Content="Bar" GroupName="ChartTypeRadios" Margin="20,5,0,0" Click="Radio_Click"/>
+                <RadioButton Name="PieRadio" Content="Pie" GroupName="ChartTypeRadios" Margin="20,5,0,0" Click="Radio_Click"/>
+                <RadioButton Name="LineRadio" Content="Line" GroupName="ChartTypeRadios" Margin="20,5,0,0" Click="Radio_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
